@@ -18,10 +18,10 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
+
     @PostMapping("/addhotels")
     public ResponseEntity<BaseResponse<Hotel>> addHotel(@RequestBody Hotel hotel) throws B2bHotelException {
         return hotelService.addHotel(hotel);
-    }
 
     // Get all hotels
     @GetMapping("/getallhotels")
