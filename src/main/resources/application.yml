@@ -2,5 +2,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/mydatabase
+#      uri: mongodb://fahad:rOtsZnAcv1EiemNji0GJu4zD30dq4G@54.253.43.62:37317/test_db
+
 
 
