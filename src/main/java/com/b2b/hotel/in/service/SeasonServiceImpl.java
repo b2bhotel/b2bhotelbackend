@@ -33,16 +33,16 @@ public class SeasonServiceImpl implements SeasonService {
         Map<String,String> headerMap = RequestUtils.getHeaders(request);
         String flowId = headerMap.getOrDefault("flowid", null);
         season.setFlowId(flowId);
-      /*  boolean hasOverlappingSeason = seasonRepository.existsByFlowIdAndRoomDetailsAndDateOverlap(
+        boolean hasOverlappingSeason = seasonRepository.existsByFlowIdAndRoomDetailsAndDateOverlap(
                 season.getFlowId(),
-             //   season.getRoomDetails(),
+                season.getRoomSelected(),
                 season.getSeasonStartDate(),
                 season.getSeasonEndDate()
-        );*/
+        );
 
-       /* if (hasOverlappingSeason) {
+        if (hasOverlappingSeason) {
             throw new B2bHotelException("Overlapping season with the same roomId and flowId already exists.");
-        }*/
+        }
         Season response = seasonRepository.save(season);
 
         return new ResponseEntity<>(BaseResponseBuilder.buildResponse(HttpStatus.OK.name(),HttpStatus.OK.value(), "Request is successfull",response),HttpStatus.OK);
@@ -57,7 +57,7 @@ public class SeasonServiceImpl implements SeasonService {
     public ResponseEntity<BaseResponse<List<RoomIdActive>>> getAllRoomByFlowId()  {
         Map<String, String> headerMap = RequestUtils.getHeaders(request);
         String flowId = headerMap.getOrDefault("flowid", null);
-//        Optional<List<Room>> response = roomRepository.findRoomByFlowId(flowId);
+   //   Optional<List<Room>> response = roomRepository.findRoomByFlowId(flowId);
 //
 //        List<RoomIdActive> roomIdActiveList = new ArrayList<>();
 //        response.ifPresentOrElse(rooms -> rooms.forEach(room -> {

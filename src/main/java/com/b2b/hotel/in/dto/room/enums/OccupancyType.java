@@ -9,6 +9,7 @@ public enum OccupancyType {
     ADDITIONAL_OCCUPANCY_3("Additional Occupancy 3");
 
 
+
     @Getter
     private final String value;
 
