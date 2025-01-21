@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 public interface RoomService {
-    public ResponseEntity<BaseResponse<Room>> addRoom(@RequestBody Room room);
+    public ResponseEntity<BaseResponse<Room>> addRoom(Room room);
 
     ResponseEntity<BaseResponse<List<Room>>> getAllRoomByFlowId();
 

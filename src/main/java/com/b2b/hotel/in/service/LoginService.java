@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface LoginService {
 
-    ResponseEntity<BaseResponse<String>> getLoginDetails(@RequestBody LoginDetails loginDetails);
+    ResponseEntity<BaseResponse<String>> getLoginDetails(LoginDetails loginDetails);
 }
